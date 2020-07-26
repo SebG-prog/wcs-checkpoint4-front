@@ -2,20 +2,22 @@ import React from 'react'
 
 import './ProjectCard.css'
 
-const ProjectCard = () => {
+const ProjectCard = ({ data: { title, description, urlGitHub, urlProjectLive, screenshot } }) => {
+
   return (
-    <div className='project-card-container'>
-      <p>image</p>
-      <p>titre projet</p>
-      <p>description</p>
+    <div className='project-card-container' >
+      <p>{screenshot}</p>
+      <p>{title}</p>
+      <p>{description}</p>
       <div>
         <div>
-          <p>{'View & edit'}</p>
+          <p>{urlProjectLive} + Edit</p>
         </div>
-        <p>github Link</p>
+        <p>{urlGitHub}</p>
       </div>
     </div>
   )
 }
 
 export default ProjectCard
+

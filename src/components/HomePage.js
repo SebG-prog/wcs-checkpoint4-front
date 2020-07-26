@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './HomePage.css'
-import ProjectCard from './ProjectCard'
+import ProjectSection from './ProjectSection'
 
 const HomePage = () => {
   return (
@@ -12,17 +12,15 @@ const HomePage = () => {
         <p>A little paragraph about me</p>
         <div>Logo github & linkedIn</div>
       </header>
-      <section>
-        <ProjectCard />
-      </section>
+      <ProjectSection />
       <footer className='homepage-footer'>
-          <div>
-            <p>Album example customized blabla</p>
-            <p>More information blabla</p>
-          </div>
-          <div>
-            <p>Back to top</p>
-          </div>
+        <div>
+          <p>Album example customized blabla</p>
+          <p>More information blabla</p>
+        </div>
+        <div>
+          <p>Back to top</p>
+        </div>
       </footer>
     </div>
   )
