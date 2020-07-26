@@ -13,7 +13,7 @@ const ProjectSection = () => {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    Axios.get(`${backURL}/project`).then(res => {
+    Axios.get(`${backURL}/projects`).then(res => {
       setProjectData(console.log(res.data) || res.data)
       setIsLoaded(isLoaded => !isLoaded)
     })
