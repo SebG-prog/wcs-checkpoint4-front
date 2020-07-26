@@ -6,7 +6,7 @@ import ProjectSection from './ProjectSection'
 const HomePage = () => {
   return (
     <div className='homepage-container'>
-      <nav>Portfolio</nav>
+      <nav className='homepage-navbar'>Portfolio</nav>
       <header className='homepage-header'>
         <h1>John Doe</h1>
         <p>A little paragraph about me</p>

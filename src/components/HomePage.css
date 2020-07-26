@@ -1,16 +1,26 @@
 .homepage-container {
-  background-color: whitesmoke;
+  background-color: #F8F9FA;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.homepage-navbar {
+  background-color: #343A40;
+  color: white;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
+
 .homepage-header {
-  background-color: grey;
+  background-color: white;
+  width: 100%;
 }
 
 .homepage-footer {
-  background-color: grey;
+  background-color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;

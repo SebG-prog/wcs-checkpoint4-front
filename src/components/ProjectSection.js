@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import Axios from 'axios'
 
 import ProjectCard from './ProjectCard'
@@ -20,10 +21,11 @@ const ProjectSection = () => {
 
   return (
     !isLoaded ? <div>Loading...</div> :
-    <section className='project-card-section'>
-      {projectData.map(project =>
-        <ProjectCard key={project.id} data={project}/>
-      )}
+      <section className='project-card-section'>
+        {projectData.map(project =>
+          <ProjectCard key={project.id} data={project} />
+        )}
+        <Link to='/addProject' >Add a Project</Link>
       </section>
   )
 }

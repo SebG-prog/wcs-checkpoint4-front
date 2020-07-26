@@ -1,5 +1,55 @@
+
 .project-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border : 1px solid black;
+  border-radius: 5px;
   margin: 1%;
   width : 30%;
+}
+.project-image-container {
+  border-radius: inherit;
+  width: 100%;
+  height: 140px;
+}
+
+#project-image {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card-info {
+  padding: 1rem;
+}
+
+.project-card-info p {
+  text-align: justify;
+  text-justify: inter-word;
+  padding-top: 1rem;
+}
+
+.project-card-links-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.project-card-view-button, .project-card-edit-button {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid black
+}
+
+.project-card-view-button {
+  border-radius: 4px 0 0 4px;
+}
+
+.project-card-edit-button {
+  border-radius: 0 4px 4px 0;
+}
+
+#GitHub-logo {
+  width: 20px;
 }
