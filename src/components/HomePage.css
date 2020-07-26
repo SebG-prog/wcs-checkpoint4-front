@@ -1,0 +1,14 @@
+.homepage-container {
+  background-color: whitesmoke;
+}
+
+.homepage-header {
+  background-color: grey;
+}
+
+.homepage-footer {
+  background-color: grey;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
