@@ -1,68 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Checkpoint 4 - Sujet sur une journée
 
-## Available Scripts
+Pour celles et ceux qui sont encore pris par les projets (ou autre raison valable), nous proposons un sujet de checkpoint 4 réalisable en une journée, au lieu des deux prévues pour le [sujet classique](https://odyssey.wildcodeschool.com/quests/655).
 
-In the project directory, you can run:
+* Checkpoint réduit :
 
-### `npm start`
+    * Thème unique : faire un portfolio. Il reste possible de partir sur un sujet différent **mais collant de près aux fonctionnalités qu'on demande ci-dessous** pour le portfolio.
+    * Se concentre plus sur la partie purement technique / React / Node.js, moins sur le maquettage/intégration
+    * Les user stories sont fournies, des templates HTML/CSS sont proposés comme base de départ, il vous reste tout de même à créer la base de données, à partir de suggestions
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Construire un portfolio
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+L'idée est de créer un portfolio en ligne présentant vos différents projets : projets réalisés en formation (incluant ceux de hackathon) ou projets personnels.
 
-### `npm test`
+### User stories
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* La page d'accueil affiche les différents projets, dans une mise en page responsive
+* Un formulaire permet de saisir un nouveau projet
 
-### `npm run build`
+* Un bouton d'édition permet d'éditer le projet, avec un formulaire identique à celui de création, mais pré-rempli
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Pré-requis techniques
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* Partie front :
+    * utiliser React Router pour passer de la page d'accueil à la page d'ajout de projet
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Partie back : 
+    * utiliser le routeur Express pour ne pas écrire ses routes directement sur "app"
+    * utiliser dotenv pour configurer _au moins_ le mot de passe de connexion à la base de données
 
-### `npm run eject`
+### Ressources
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Pour vous alléger le travail d'intégration, on vous **propose**, sans vous les imposer, des templates existants.
+Vous êtes libres d'utiliser un autre template, mais en ne récupérant que son HTML/CSS - **pas d'animations avec jQuery** ou autres qui peuvent être "cassées" par l'intégration dans React.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Basé sur Bootstrap et fortement inspiré de leur Album Example, avec une mise en page sous forme de "cards" :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    * [Démo](https://bhubr.github.io/bootstrap-portfolio/)
+    * [GitHub](https://github.com/bhubr/bootstrap-portfolio)
+* Non-basé sur Bootstrap, avec les projets s'affichant en pleine largeur, les uns à la suite des autres : 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    * [Démo](https://portfolio-template.surge.sh/)
+    * [GitHub](https://github.com/nisarhassan12/portfolio-template)
 
-## Learn More
+### Base de données
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Vous aurez une seule table à créer, qui devra contenir les données d'un projet :
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Son nom,
+* Sa description succinte,
+* L'URL du repo GitHub,
+* Eventuellement l'URL du projet déployé
+* Le chemin d'une capture d'écran (vous pouvez stocker les images sous `public/` dans le front)
 
-### Code Splitting
+### Lancez-vous !
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* Travaillez sur l'aspect back et front d'une user story avant de passer à la suivante
+* Organisez vous comme cela vous arrange pour réaliser le checkpoint sur une journée en tout (mais vous pouvez déborder si le temps le permet !)
