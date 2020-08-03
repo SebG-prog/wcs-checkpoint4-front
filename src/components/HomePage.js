@@ -1,22 +1,24 @@
 import React from 'react'
 
-import './HomePage.css'
 import ProjectSection from './ProjectSection'
+
+import './HomePage.css'
 
 const HomePage = () => {
   return (
     <div className='homepage-container'>
-      <nav className='homepage-navbar'>Portfolio</nav>
       <header className='homepage-header'>
-        <h1>John Doe</h1>
+        <h1>Sébastien Gruet</h1>
         <p>A little paragraph about me</p>
-        <div>Logo github & linkedIn</div>
+        <div>
+          <a target="_blank" rel="noopener noreferrer" href={`https://www.linkedin.com/in/sebastien-gruet/`}><img id='HP-LinkedIn-logo' src={`assets/linkedin.png`} alt='logo' /></a>
+          <a target="_blank" rel="noopener noreferrer" href={`https://github.com/SebG-prog`}><img id='HP-GitHub-logo' src={`assets/GitHub.png`} alt='logo' /></a>
+        </div>
       </header>
       <ProjectSection />
       <footer className='homepage-footer'>
         <div>
-          <p>Album example customized blabla</p>
-          <p>More information blabla</p>
+          <p>More information...</p>
         </div>
         <div>
           <p>Back to top</p>

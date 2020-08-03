@@ -86,14 +86,6 @@
   padding: 0.4rem;
 }
 
-.success-message {
-  font-size: 1.2rem;
-  border: 2px solid rgb(113, 43, 226);
-  border-radius: 5px;
-  margin-top: 0.5rem;
-  padding: 0.5rem;
-}
-
 @media screen and (min-width : 640px) {
  
   .edit-project-container {
@@ -121,17 +113,11 @@
   }
   
   .edit-project-container textarea {
-    height: 300px
+    height: 250px
   }
   
   .edit-project-container .submit-button {
     margin-top: 1rem;
     font-size: 1.4rem;
-  }
-  
-  .success-message {
-    font-size: 1.4rem;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
   }
 }

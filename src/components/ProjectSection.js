@@ -9,12 +9,12 @@ import { backURL } from '../config'
 import './ProjectSection.css'
 
 const ProjectSection = () => {
-  const [projectData, setProjectData] = useState([])
+  const [projectList, setProjectList] = useState([])
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     Axios.get(`${backURL}/projects`).then(res => {
-      setProjectData(console.log(res.data) || res.data)
+      setProjectList(res.data)
       setIsLoaded(isLoaded => !isLoaded)
     })
   }, [])
@@ -22,10 +22,10 @@ const ProjectSection = () => {
   return (
     !isLoaded ? <div>Loading...</div> :
       <section className='project-card-section'>
-        {projectData.map(project =>
-          <ProjectCard key={project.id} data={project} />
+        {projectList.map(project =>
+          <ProjectCard key={project.id} project={project} />
         )}
-        <Link to='/addProject' >Add a Project</Link>
+        <Link id='addProject' to='/addProject' >Add a Project (+)</Link>
       </section>
   )
 }

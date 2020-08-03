@@ -5,22 +5,19 @@ import { backURL } from '../config'
 
 import './EditProjectForm.css'
 
-const EditProjectForm = ({ data, setShowEditForm }) => {
-  const [projectDetails, setProjectDetails] = useState({ ...data })
-  const [editProjectPosted, setEditProjectPosted] = useState(false)
-
+const EditProjectForm = ({ data, functions : {setProjectData, setShowEditForm} }) => {
+  const [newProjectDetails, setNewProjectDetails] = useState({ ...data })
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    setProjectDetails(prevProjectDetails => ({ ...prevProjectDetails, [name]: value }))
+    setNewProjectDetails(prevNewProjectDetails => ({ ...prevNewProjectDetails, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Axios.post(`${backURL}/projects`, projectDetails).then(res => {
-    //   setEditProjectPosted(editProjectPosted => !editProjectPosted)
-    //   setProjectDetails(initialValues)
-    // })
+    const result = await Axios.put(`${backURL}/projects`, newProjectDetails)
+    setProjectData(result.data)
+    setShowEditForm(showEditForm => !showEditForm)
   }
 
   return (
@@ -32,18 +29,17 @@ const EditProjectForm = ({ data, setShowEditForm }) => {
         </div>
         <form onSubmit={handleSubmit}>
           <label htmlFor="title">Title:</label>
-          <input id='title' name='title' value={projectDetails.title} onChange={handleChange} required />
+          <input id='title' name='title' value={newProjectDetails.title} onChange={handleChange} required />
           <label htmlFor="description">Description:</label>
-          <textarea id='description' name='description' value={projectDetails.description} onChange={handleChange} required />
+          <textarea id='description' name='description' value={newProjectDetails.description} onChange={handleChange} required />
           <label htmlFor="urlGitHub">Projet GitHub (url):</label>
-          <input id='urlGitHub' name='urlGitHub' value={projectDetails.urlGitHub} onChange={handleChange} required />
+          <input id='urlGitHub' name='urlGitHub' value={newProjectDetails.urlGitHub} onChange={handleChange} required />
           <label htmlFor="urlProjectLive">Website URL:</label>
-          <input id='urlProjectLive' name='urlProjectLive' value={projectDetails.urlProjectLive} onChange={handleChange} required />
+          <input id='urlProjectLive' name='urlProjectLive' value={newProjectDetails.urlProjectLive} onChange={handleChange} required />
           <label htmlFor="screenshot">Image for the project:</label>
-          <input id='screenshot' name='screenshot' value={projectDetails.screenshot} onChange={handleChange} required />
+          <input id='screenshot' name='screenshot' value={newProjectDetails.screenshot} onChange={handleChange} required />
           <button className='submit-button'>Send!</button>
         </form>
-        {editProjectPosted && <p className='success-message'>New project posted with success!</p>}
       </div>
     </div>
   )

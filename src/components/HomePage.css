@@ -3,25 +3,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.homepage-navbar {
-  background-color: #343A40;
-  color: white;
   width: 100%;
-  padding: 0.5rem 1rem;
-  font-size: 1.25rem;
-  white-space: nowrap;
 }
 
 .homepage-header {
   background-color: white;
   width: 100%;
+  margin-top: 1rem;
+}
+
+#HP-LinkedIn-logo, #HP-GitHub-logo {
+  margin: 0.1rem 0.5rem;
+  width: 30px;
 }
 
 .homepage-footer {
-  background-color: white;
+  background-color: #343A40;
+  color: white;
+  width: 100%;
+  min-height: 2.5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+@media screen and (min-width : 640px) {
+  .homepage-footer {
+    min-height: 3rem;
+  }
+}
+
+@media screen and (min-width : 1024px) {
+  .homepage-footer {
+    min-height: 4rem;
+  }
 }
