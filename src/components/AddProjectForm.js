@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import Axios from 'axios'
 
 import { backURL } from '../config'
@@ -15,7 +16,7 @@ const AddProjectForm = () => {
   }
 
   const [projectDetails, setProjectDetails] = useState(initialValues)
-  const [newProjectPosted, setNewProjectPosted] = useState(false)
+  const history = useHistory()
 
 
   const handleChange = (e) => {
@@ -23,12 +24,11 @@ const AddProjectForm = () => {
     setProjectDetails(prevProjectDetails => ({ ...prevProjectDetails, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    Axios.post(`${backURL}/projects`, projectDetails).then(res => {
-      setNewProjectPosted(newProjectPosted => !newProjectPosted)
-      setProjectDetails(initialValues)
-    })
+    await Axios.post(`${backURL}/projects`, projectDetails)
+    setProjectDetails(initialValues)
+    history.push('/')
   }
 
   return (
@@ -47,7 +47,6 @@ const AddProjectForm = () => {
         <input id='screenshot' name='screenshot' value={projectDetails.screenshot} onChange={handleChange} required />
         <button className='submit-button'>Send!</button>
       </form>
-      {newProjectPosted && <p className='success-message'>New project posted with success!</p>}
     </div>
   )
 }

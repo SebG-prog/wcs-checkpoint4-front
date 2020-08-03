@@ -48,6 +48,11 @@
   border-radius: 4px 0 0 4px;
 }
 
+.project-card-view-button a {
+  text-decoration: none;
+  color: black;
+}
+
 .project-card-edit-button {
   border-radius: 0 4px 4px 0;
 }

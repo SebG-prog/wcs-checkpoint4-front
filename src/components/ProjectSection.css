@@ -2,9 +2,25 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   width: 90%;
 }
 
 #addProject {
+  display: block;
   margin: 1rem 0;
+}
+
+@media screen and (min-width : 640px) {
+  #addProject {
+    width : 45%;
+    margin: 0.5rem;
+  }
+}
+
+@media screen and (min-width : 1024px) {
+  .project-card-container {
+    width : 30%;
+    margin: 0.75rem;
+  }
 }
