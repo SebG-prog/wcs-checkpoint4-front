@@ -5,16 +5,8 @@ import { backURL } from '../config'
 
 import './EditProjectForm.css'
 
-const EditProjectForm = () => {
-  const initialValues = {
-    title: '',
-    description: '',
-    urlGitHub: '',
-    urlProjectLive: '',
-    screenshot: ''
-  }
-
-  const [projectDetails, setProjectDetails] = useState(initialValues)
+const EditProjectForm = ({ data, setShowEditForm }) => {
+  const [projectDetails, setProjectDetails] = useState({ ...data })
   const [editProjectPosted, setEditProjectPosted] = useState(false)
 
 
@@ -32,22 +24,27 @@ const EditProjectForm = () => {
   }
 
   return (
-    <div className='add-project-container'>
-      <h1>Add a new project</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title:</label>
-        <input id='title' name='title' value={projectDetails.title} onChange={handleChange} required />
-        <label htmlFor="description">Description:</label>
-        <textarea id='description' name='description' value={projectDetails.description} onChange={handleChange} required />
-        <label htmlFor="urlGitHub">Projet GitHub (url):</label>
-        <input id='urlGitHub' name='urlGitHub' value={projectDetails.urlGitHub} onChange={handleChange} required />
-        <label htmlFor="urlProjectLive">Website URL:</label>
-        <input id='urlProjectLive' name='urlProjectLive' value={projectDetails.urlProjectLive} onChange={handleChange} required />
-        <label htmlFor="screenshot">Image for the project:</label>
-        <input id='screenshot' name='screenshot' value={projectDetails.screenshot} onChange={handleChange} required />
-        <button className='submit-button'>Send!</button>
-      </form>
-      {editProjectPosted && <p className='success-message'>New project posted with success!</p>}
+    <div className='edit-project-modal'>
+      <div className='edit-project-container'>
+        <div className='edit-head-modal'>
+          <h1>Edit project</h1>
+          <button className='close-button' onClick={() => setShowEditForm(showEditForm => !showEditForm)}>X</button>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="title">Title:</label>
+          <input id='title' name='title' value={projectDetails.title} onChange={handleChange} required />
+          <label htmlFor="description">Description:</label>
+          <textarea id='description' name='description' value={projectDetails.description} onChange={handleChange} required />
+          <label htmlFor="urlGitHub">Projet GitHub (url):</label>
+          <input id='urlGitHub' name='urlGitHub' value={projectDetails.urlGitHub} onChange={handleChange} required />
+          <label htmlFor="urlProjectLive">Website URL:</label>
+          <input id='urlProjectLive' name='urlProjectLive' value={projectDetails.urlProjectLive} onChange={handleChange} required />
+          <label htmlFor="screenshot">Image for the project:</label>
+          <input id='screenshot' name='screenshot' value={projectDetails.screenshot} onChange={handleChange} required />
+          <button className='submit-button'>Send!</button>
+        </form>
+        {editProjectPosted && <p className='success-message'>New project posted with success!</p>}
+      </div>
     </div>
   )
 }

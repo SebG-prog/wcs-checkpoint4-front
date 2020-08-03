@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import EditProjectForm from './EditProjectForm'
 
 import './ProjectCard.css'
 
-const ProjectCard = ({ data: { title, description, urlGitHub, urlProjectLive, screenshot } }) => {
+const ProjectCard = ({ data }) => {
+  const { title, description, urlGitHub, urlProjectLive, screenshot } = data
+  const [showEditForm, setShowEditForm] = useState(false)
 
   return (
     <div className='project-card-container' >
@@ -15,7 +19,8 @@ const ProjectCard = ({ data: { title, description, urlGitHub, urlProjectLive, sc
         <div className='project-card-links-container'>
           <div>
             <button className='project-card-view-button'><a target="_blank" rel="noopener noreferrer" href={`${urlProjectLive}`}>View</a></button>
-            <button className='project-card-edit-button'><a target="_blank" rel="noopener noreferrer" href={''}>Edit</a></button>
+            <button className='project-card-edit-button' onClick={() => setShowEditForm(showEditForm => !showEditForm)}>Edit</button>
+            {showEditForm && <EditProjectForm data={data} setShowEditForm={setShowEditForm} />}
           </div>
           <a target="_blank" rel="noopener noreferrer" href={`${urlGitHub}`}><img id='GitHub-logo' src={`assets/GitHub.png`} alt='logo' /></a>
         </div>
