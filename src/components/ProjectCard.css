@@ -1,0 +1,76 @@
+.project-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border : 1px solid black;
+  border-radius: 5px;
+  margin-top: 1rem;
+  width : 100%;
+}
+
+.project-image-container {
+  border-radius: inherit;
+  width: 100%;
+  height: 140px;
+}
+
+#project-image {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card-info {
+  padding: 1rem;
+  width: 100%;
+}
+
+.project-card-info p {
+  text-align: justify;
+  text-justify: inter-word;
+  padding-top: 1rem;
+}
+
+.project-card-links-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.project-card-view-button, .project-card-edit-button {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid black
+}
+
+.project-card-view-button {
+  border-radius: 4px 0 0 4px;
+}
+
+.project-card-view-button a {
+  text-decoration: none;
+  color: black;
+}
+
+.project-card-edit-button {
+  border-radius: 0 4px 4px 0;
+}
+
+#GitHub-logo {
+  width: 20px;
+}
+
+@media screen and (min-width : 640px) {
+  .project-card-container {
+    width : 45%;
+    margin: 0.5rem;
+  }
+}
+
+@media screen and (min-width : 1024px) {
+  .project-card-container {
+    width : 30%;
+    margin: 0.75rem;
+  }
+}
